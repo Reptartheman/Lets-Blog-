@@ -22,15 +22,21 @@
     background-color:gainsboro;
 }
 
-#headerNav{
+.form{
     display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
+    /* justify-content: space-evenly; */
+    flex-direction: column;
     background-color:honeydew;
     border: var(--border);
     font-family: var(--fontgroup);
     color: var(--fontcolor);
 
+}
+
+#buttonDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly
 }
 
 .signIn {
