@@ -1,0 +1,53 @@
+:root {
+    --fontgroup: 'Josefin Sans', sans-serif;
+    --border: 2px solid royalblue;
+    --fontcolor: royalblue;
+
+}
+
+
+.title{
+    font-family: var(--fontgroup);
+    color: royalblue;
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 0.5em;
+}
+
+#directive{
+    font-size: 1em;
+}
+
+#bodyBackground{
+    background-color:gainsboro;
+}
+
+#headerNav{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    background-color:honeydew;
+    border: var(--border);
+    font-family: var(--fontgroup);
+    color: var(--fontcolor);
+
+}
+
+.signIn {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all .35s ease-out;
+    justify-content: center;
+    background-color: honeydew;
+    color: var(--fontcolor);
+    font-size: small;
+    font-family: var(--fontgroup);
+    width: 7em;
+    cursor: pointer;
+}
+
+nav > button:hover{
+    color: honeydew;
+    background-color: royalblue;
+}
