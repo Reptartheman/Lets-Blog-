@@ -20,9 +20,14 @@
      <a href="/">The Tech Blog</a>
     </h1>
     <ul style="list-style-type:none;">
-        <li><a href ="/">Home</a></li>
-        <li><a href ="/dashboard">Dashboard</a></li>
-        <li><a href="/login">Login</a></li>
+        <li class="li-inline nav-item"><a href ="/">Home</a></li>
+        <li class="li-inline nav-item"><a href ="/dashboard">Dashboard</a></li>
+
+        {{#if logged_in}}
+        <button class="no-button" id="logout">Logout</button>
+        {{else}}
+        <a href="/login">Login</a>
+        {{/if}}
     </ul>
   </nav>      
   </header>
@@ -33,6 +38,8 @@
   </div>
     
     
-        
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}  
       </body>
 </html>
