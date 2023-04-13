@@ -14,46 +14,16 @@
     margin-top: 0.5em;
 }
 
-#directive{
-    font-size: 1em;
-}
-
 #bodyBackground{
     background-color:gainsboro;
 }
 
-.form{
+.container{
     display: flex;
-    /* justify-content: space-evenly; */
-    flex-direction: column;
+    justify-content: space-between; 
     background-color:honeydew;
     border: var(--border);
     font-family: var(--fontgroup);
     color: var(--fontcolor);
 
-}
-
-#buttonDiv{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly
-}
-
-.signIn {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    transition: all .35s ease-out;
-    justify-content: center;
-    background-color: honeydew;
-    color: var(--fontcolor);
-    font-size: small;
-    font-family: var(--fontgroup);
-    width: 7em;
-    cursor: pointer;
-}
-
-nav > button:hover{
-    color: honeydew;
-    background-color: royalblue;
-}
+} 

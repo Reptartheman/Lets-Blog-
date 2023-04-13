@@ -3,7 +3,7 @@
 // this Router method will allow us to handle HTTP requests.
 const router = require("express").Router();
 // destructuring our objects from the models
-const { Post, Comment, User } = require("../models/index");
+const { Post, Comment, User } = require("../models");
 
 /* this route will GET all of the posts for the homepage
  it finds all of the posts that include the user

@@ -12,22 +12,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Signika+Negative&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./css/style.css">
 </head>
-<body class="text-center">
-          <p><a href ="/">Home</a></p>
-        <p><a href ="/dashboard">Dashboard</a></p>
-      <form class="form">
-        <h1 class="title">Welcome to the Tech Blog! </h1>
-        <h3 id= "directive" class="title">Please sign in or Sign Up</h3>
-    
-        <div id="buttonDiv">
-        <button class= "signIn w-25 btn btn-lg btn-primary" type="submit">Sign in</button>
-        <button class= "signIn w-25 btn btn-lg btn-primary" type="submit">Sign Up</button>
-        </div>
-      </form>
+<body>
+  <div class="container">
+  <header>
+  <nav>
+    <h1>
+     <a href="/">The Tech Blog</a>
+    </h1>
+    <ul style="list-style-type:none;">
+        <li><a href ="/">Home</a></li>
+        <li><a href ="/dashboard">Dashboard</a></li>
+        <li><a href="/login">Login</a></li>
+    </ul>
+  </nav>      
+  </header>
     
     <main class="form-signin w-25 m-auto">
         {{{body}}}
     </main>
+  </div>
     
     
         
