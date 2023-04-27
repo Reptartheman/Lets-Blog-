@@ -1,0 +1,7 @@
+{{#each comments as |c|}}
+<div class="comments">
+    <div class="comment-title title"></div>
+    <p class="comment">{{c.comment}}</p>
+    <p class="comment">- Commented by {{c.user.name}} on {{format_date c.date_posted}}</p>
+</div>
+{{/each}}

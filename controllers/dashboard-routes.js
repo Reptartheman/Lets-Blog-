@@ -30,7 +30,7 @@ router.get('/', withAuth, async (req, res) => {
 
         res.render('dashboard', {
             ...user,
-            logged_in: true
+            loggedIn: true
         });
     } catch (err) {
         res.status(500).json(err);
@@ -90,7 +90,7 @@ router.get('/edit/:id', withAuth, async (req, res) => {
 
         res.render('edit_post', {
             ...post,
-            logged_in: req.session.logged_in
+            loggedIn: req.session.loggedIn
         });
         
     } catch (err) {
