@@ -6,16 +6,12 @@
 }
 
 
-.title{
+.menu{
     font-family: var(--fontgroup);
     color: royalblue;
     text-align: center;
     font-size: 1.5em;
     margin-top: 0.5em;
-}
-
-#bodyBackground{
-    background-color:gainsboro;
 }
 
 .container{

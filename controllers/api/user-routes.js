@@ -10,7 +10,7 @@ const { User } = require('../../models');
     - .save() will is called on the req.session object and
     will make sure the session is saved before the res is sent
     to the user.
-    - user_id and logged_in properties are set in the session 
+    - user_id and loggedIn properties are set in the session 
     object to show that the user is logged in.
 
 */
@@ -64,7 +64,7 @@ to find some user data.
         req.session.user_id = userData.id;
         req.session.loggedIn = true;
         console.log(req.session);
-        res.json({ user: userData, message: "You are now logged in!" });
+        res.status(200).json({ user: userData, message: "You are now logged in!" });
       });
     } catch (err) {
       res.status(400).json(err);

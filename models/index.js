@@ -7,6 +7,7 @@ The Foreign Key, which is where the two tables connect, will be user_id */
 
 User.hasMany(Post, {
     foreignKey: 'user_id',
+    onDelete: 'CASCADE'
   });
 
 
@@ -15,7 +16,6 @@ User.hasMany(Post, {
 
   Post.belongsTo(User, {
     foreignKey: 'user_id',
-    onDelete: 'CASCADE'
   });
 
   /* A Post, can HAVE MANY comments. This is another One-To-Many relationship.
@@ -32,13 +32,16 @@ User.hasMany(Post, {
 
   Comment.belongsTo(Post, {
     foreignKey: 'post_id',
-    onDelete: 'CASCADE'
   });
 
-  Comment.belongsTo(Post, {
-    foreignKey: 'user_comment_id',
+  User.hasMany(Comment, {
+    foreignKey: 'user_id',
     onDelete: 'CASCADE'
-  });
+});
+
+Comment.belongsTo(User, {
+  foreignKey: 'user_id'
+});
 
   module.exports = {
     User,
