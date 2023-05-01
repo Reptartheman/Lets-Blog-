@@ -7,7 +7,7 @@ The Foreign Key, which is where the two tables connect, will be user_id */
 
 User.hasMany(Post, {
     foreignKey: 'user_id',
-    onDelete: 'CASCADE'
+    
   });
 
 
@@ -24,7 +24,7 @@ User.hasMany(Post, {
 
   Post.hasMany(Comment, {
     foreignKey: 'post_id',
-    onDelete: 'CASCADE'
+    
   });
 
   /* A Comment is going to belong to a Post. These are going to connect at post_id.
@@ -36,7 +36,7 @@ User.hasMany(Post, {
 
   User.hasMany(Comment, {
     foreignKey: 'user_id',
-    onDelete: 'CASCADE'
+    
 });
 
 Comment.belongsTo(User, {
