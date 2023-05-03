@@ -23,3 +23,10 @@
     color: var(--fontcolor);
 
 } 
+
+.new-post-btn {
+    background-color: honeydew;
+    color: royalblue;
+    font-size: 30px;
+    margin: 10% 0;
+  }

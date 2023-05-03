@@ -53,7 +53,7 @@ router.get("/post/:id", async (req, res) => {
       console.log(postData);
       const post = postData.get({ plain: true });
 
-      res.render("single-post", { post });
+      res.render("edit_post", { post });
     } else {
       res.status(404).end();
     }

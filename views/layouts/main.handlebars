@@ -19,7 +19,7 @@
             <nav>
                 <a href="/" class="menu">Home</a>
                 <a href="/dashboard" class="menu">Dashboard</a>
-                {{#if logged_in}}
+                {{#if loggedIn}}
                 <button class="no-button menu" id="logout">logout</button>
                 {{else}}
                 <a href="/login" class="menu">login</a>
@@ -36,7 +36,7 @@
   </div>
     
     
-  {{#if logged_in}}
+  {{#if loggedIn}}
   <script src="/js/logout.js"></script>
   {{/if}}  
       </body>

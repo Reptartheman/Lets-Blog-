@@ -1,24 +1,29 @@
 <div class="new-post">
-  <div class="col-auto">
+  <div class=\"col-auto">
     <h2>Welcome, {{name}}!</h2>
   </div>
 </div>
 
+{{#if posts.length}}
 <div class="new-post">
-  {{#if posts.length}}
   <div class="col-md-6 project-list">
-    
-    {{#each posts as |post|}}
+    {{#each posts}}
     <div class="new-post mb-2">
       <div class="col-md-8 each-post">
-        <h4><a href="/dashboard/edit/{{post.id}}">{{post.title}}</a></h4>
+        <h4><a href="/dashboard/edit/{{id}}">{{title}}</a></h4>
       </div>
     </div>
     {{/each}}
   </div>
-  {{/if}}
 </div>
+{{else}}
+<div class="new-post">
+  <div class="col-md-6 project-list">
+    <p>No posts found.</p>
+  </div>
+</div>
+{{/if}}
 
 <div class="form-group new-post">
-<button type="submit" class="btn new-post-btn"><a class="link" href="/dashboard/new">+ New Post</a></button>
+  <button type="submit" class="btn new-post-btn"><a class="link" href="/dashboard/new">+ New Post</a></button>
 </div>
