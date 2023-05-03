@@ -16,7 +16,7 @@ const withAuth = require("../utils/auth");
    - The res.render is giving us the dashboard page and the user object
     data gets displayed on the page.
     - The logged in data also gets passed to the view.*/
-router.get("/", withAuth, async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     console.log(req.session);
     const userData = await User.findByPk(req.session.user_id, {
