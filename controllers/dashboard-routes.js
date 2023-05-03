@@ -1,8 +1,8 @@
-const router = require('express').Router();
+const router = require("express").Router();
 
-const { User, Post, Comment } = require('../models');
+const { User, Post, Comment } = require("../models");
 
-const withAuth = require('../utils/auth');
+const withAuth = require("../utils/auth");
 
 /* This GET request will give us our main dashboard.
    - Before it hits the callback function, it's going to hit the 
@@ -16,25 +16,27 @@ const withAuth = require('../utils/auth');
    - The res.render is giving us the dashboard page and the user object
     data gets displayed on the page.
     - The logged in data also gets passed to the view.*/
-router.get('/', withAuth, async (req, res) => {
-    try {
-  
-        const userData = await User.findByPk(req.session.user_id, {
-            attributes: { exclude: ['password'] },
-            include: [{ model: Post }],
-        });
+router.get("/", withAuth, async (req, res) => {
+  try {
+    console.log(req.session);
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] },
+      include: [{ model: Post }],
+    });
 
-
-        const user = userData.get({ plain: true });
-        console.log(user);
-
-        res.render('dashboard', {
-            ...user,
-            loggedIn: true
-        });
-    } catch (err) {
-        res.status(500).json(err);
+    if (!userData) {
+      return res.status(404).json({ message: "User not found" });
     }
+
+    const user = userData.get({ plain: true });
+
+    res.render("dashboard", {
+      ...user,
+      loggedIn: true,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 /* Below is a GET request for the /new endpoint.  
@@ -43,10 +45,9 @@ router.get('/', withAuth, async (req, res) => {
     - Upon user authentication, it will render the new post handlebar.
 
 */
-router.get('/new', (req, res) => {
-    res.render('new_post');
+router.get("/new", (req, res) => {
+  res.render("new_post");
 });
-
 
 /* 
 
@@ -64,37 +65,36 @@ by the specified id for the Post.
 - The spread operator in the ...post is taking the properties of the object and and rendering it to the page.
 
  */
-router.get('/edit/:id', withAuth, async (req, res) => {
-    try {
-        const postData = await Post.findByPk(req.params.id, {
-            include: [
-                {
-                    model: User,
-                    attributes: ['name'],
-                },
-                {
-                    model: Comment,
-                    include: {
-                        model: User,
-                        attributes: ['name']
-                    }
-                }
-            ],
-        });
+router.get("/edit/:id", withAuth, async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ["name"],
+        },
+        {
+          model: Comment,
+          include: {
+            model: User,
+            attributes: ["name"],
+          },
+        },
+      ],
+    });
 
-        if (!postData) {
-            return res.status(404).json({ message: 'Post not found' });
-        }
-        
-        const post = postData.get({ plain: true });
-
-        res.render('edit_post', {
-            ...post,
-            loggedIn: req.session.loggedIn
-        });
-        
-    } catch (err) {
-        res.status(500).json(err);
+    if (!postData) {
+      return res.status(404).json({ message: "Post not found" });
     }
+
+    const post = postData.get({ plain: true });
+
+    res.render("edit_post", {
+      ...post,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 module.exports = router;

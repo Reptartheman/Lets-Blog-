@@ -30,3 +30,29 @@
     font-size: 30px;
     margin: 10% 0;
   }
+
+  a {
+    color: royalblue;
+    margin: 5px;
+  }
+
+  .new-post {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .each-post {
+    text-align: center;
+  }
+
+  .btn.btn-primary {
+    background-color: royalblue;
+  }
+  
+  .new-post-form {
+    padding: 18px;
+  }
+  
+  .submit-comment {
+    margin: 10px;
+  }

@@ -5,7 +5,7 @@ const router = require('express').Router();
 // these routes will be defined in the home-route.js file. In this file we are importing them for use.
 const homeRoutes = require('./home-routes.js');
 // same as above, but this will be for the dashboard.
-const dashboardRoutes = require('./dashboard-routes');
+const dashboardRoutes = require('./dashboard-routes.js');
 // this will import routes from the api folder within the controllers directory.
 const apiRoutes = require('./api');
 
