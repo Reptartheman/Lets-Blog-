@@ -9,7 +9,7 @@
   - [Usage](#usage)
   - [License](#license)
   - [Contributing](#how-to-contribute)
-  - [Testing](#tests)
+  - [Screenshots](#screenshots)
   - [Questions](#questions)
 
 ## Description
@@ -24,9 +24,13 @@ Open in your web browser at https://glacial-river-25807.herokuapp.com/
 
 This application is a web based application.
 
-## Tests
+## Screenshots
 
-N/A
+![Screenshot 1](./assets/Screen%20Shot%202023-05-04%20at%209.08.16%20PM.png)
+![Screenshot 2](./assets/Screen%20Shot%202023-05-04%20at%209.08.34%20PM.png)
+![Screenshot 3](./assets/Screen%20Shot%202023-05-04%20at%209.08.46%20PM.png)
+![Screenshot 4](./assets/Screen%20Shot%202023-05-04%20at%209.09.12%20PM.png)
+
 
 ## Contributors
 
